@@ -5,7 +5,7 @@ The realization of yolov3 target detection based on Caffe and deconvolution and 
 1.caffe-master  2.opencv2.4&python-opencv2.4  3.python2.7 
 
 # 说明
-1．基于caffe的yolov3的caffemodel后期上传
+1. 基于coco训练的yolov3 caffe 模型索要:maxuehao123@outlook.com 
 
 # 效果图
 ![image](https://github.com/maxuehao/yolov3-caffe/blob/master/demo.png)

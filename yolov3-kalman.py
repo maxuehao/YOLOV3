@@ -48,10 +48,10 @@ def sigmod(x):
 #检测模型前向运算
 def load_model(net,test_img,feature_conv_name):
 	input_img = cv2.resize(test_img,(img_w,img_w),interpolation=cv2.INTER_AREA)
-	input_img = cv2.cvtColor(input_img, cv2.COLOR_BGR2RGB)
+	#input_img = cv2.cvtColor(input_img, cv2.COLOR_BGR2RGB)
 	input_img = input_img.transpose(2,0,1)
-	input_img = input_img.reshape((1,3,img_w,img_w))
-	out = net.forward_all(data=input_img/256)
+	#input_img = input_img.reshape((1,3,img_w,img_w))
+	out = net.forward_all(data=input_img/256.0)
 	shape = []
 	for i in range(3):
 		shape.append(out[feature_conv_name[i]].transpose(0, 3, 2, 1)[0])
@@ -257,7 +257,7 @@ def kalman_handle(kalman_dict, output_box, kalman_lose, iou_confidence, lose_cou
 
 
 if __name__ == "__main__":
-	confidence_dic={"13":0.6, "26":0.6, "52":0.5}
+	confidence_dic={"13":0.1, "26":0.1, "52":0.1}
 	fps=0
 	#类别数目
 	cl_num = 9
@@ -274,11 +274,11 @@ if __name__ == "__main__":
 	bias_h = [13, 30, 23, 61, 45, 119, 90, 198, 362]
 
 	#需要输出的３层feature_map的名称
-	feature_conv_name = ["layer44-conv","layer56-conv","layer68-conv"]
+	feature_conv_name = ["layer41-conv","layer53-conv","layer65-conv"]
 	caffe.set_mode_gpu()
 	#加载检测模型
-	net = caffe.Net('deconv.prototxt', 'deconv.caffemodel', caffe.TEST)
-	cap = cv2.VideoCapture(0)
+	net = caffe.Net('YOLOV3.prototxt', 'YOLOV3.caffemodel', caffe.TEST)
+	cap = cv2.VideoCapture('MOT16-03.mp4')
 
 	#创建储存k-1时刻的buff数组
 	previous_box = []

@@ -1,8 +1,8 @@
 # YOLOv3-Caffe
-The realization of yolov3 target detection based on Caffe and deconvolution and the optimization of target detection effect based on klaman multi-target tracking
+The realization of yolov3 target detection based on Caffe and the optimization of target detection effect based on klaman multi-target tracking
 
 # 依赖
-1.caffe-master  2.opencv2.4&python-opencv2.4  3.python2.7 
+1.caffe(add upsample layer https://github.com/maxuehao/caffe)  2.opencv2.4&python-opencv2.4  3.python2.7 
 
 # 说明
 1. 基于coco训练的yolov3 caffe 模型索要:maxuehao123@outlook.com 

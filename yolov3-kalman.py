@@ -277,7 +277,7 @@ if __name__ == "__main__":
 	feature_conv_name = ["layer44-conv","layer56-conv","layer68-conv"]
 	caffe.set_mode_gpu()
 	#加载检测模型
-	net = caffe.Net('YOLOV3.prototxt', 'YOLOV3.caffemodel', caffe.TEST)
+	net = caffe.Net('yolov3_res18.prototxt', 'yolov3_res18.caffemodel', caffe.TEST)
 	cap = cv2.VideoCapture('MOT16-03.mp4')
 
 	#创建储存k-1时刻的buff数组

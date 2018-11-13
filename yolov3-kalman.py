@@ -257,7 +257,7 @@ def kalman_handle(kalman_dict, output_box, kalman_lose, iou_confidence, lose_cou
 
 
 if __name__ == "__main__":
-	confidence_dic={"13":0.1, "26":0.1, "52":0.1}
+	confidence_dic={"13":0.6, "26":0.5, "52":0.4}
 	fps=0
 	#类别数目
 	cl_num = 9
@@ -274,7 +274,7 @@ if __name__ == "__main__":
 	bias_h = [13, 30, 23, 61, 45, 119, 90, 198, 362]
 
 	#需要输出的３层feature_map的名称
-	feature_conv_name = ["layer41-conv","layer53-conv","layer65-conv"]
+	feature_conv_name = ["layer44-conv","layer56-conv","layer68-conv"]
 	caffe.set_mode_gpu()
 	#加载检测模型
 	net = caffe.Net('YOLOV3.prototxt', 'YOLOV3.caffemodel', caffe.TEST)
